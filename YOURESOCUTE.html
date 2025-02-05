@@ -1,0 +1,109 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine, Maliha?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffb6c1; /* Light pink background */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff69b4; /* Hot pink text */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .gif {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #yesButton {
+            background-color: #ff69b4; /* Hot pink button */
+            color: white;
+        }
+
+        #yesButton:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+            transform: scale(1.1);
+        }
+
+        #noButton {
+            background-color: #ffccf9; /* Light pink button */
+            color: #ff69b4;
+            position: relative; /* For random movement */
+        }
+
+        #noButton:hover {
+            background-color: #ffb6c1; /* Lighter pink on hover */
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine, Maliha? 💖</h1>
+        <img src="https://media.tenor.com/jyM5vrXtwsEAAAAj/bubu-dudu-sseeyall.gif" class="gif">
+        <div class="buttons">
+            <button id="yesButton" onclick="alert('YAYAYAYAYAYAY! I knew you would say YES. wifey hehe! 💕')">Y.E.S</button>
+            <button id="noButton" onmouseover="moveNoButton()">N.O</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to grow the YES button
+        function growYesButton() {
+            const yesButton = document.getElementById('yesButton');
+            const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = `${currentSize * 1.2}px`;
+        }
+
+        // Function to move the NO button randomly
+        function moveNoButton() {
+            const noButton = document.getElementById('noButton');
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
